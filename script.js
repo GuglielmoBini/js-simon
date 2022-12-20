@@ -12,3 +12,12 @@ Esistono dei metodi per trasformare una data in millisecondi?
 */
 
 //-------------------------------------------------------------------------
+
+// prendo gli elementi dal DOM
+const countDays = document.getElementById("days");
+const countHours = document.getElementById("hours");
+const countMinutes = document.getElementById("minutes");
+const countSeconds = document.getElementById("seconds");
+
+// setto la data del countdown
+const countDownDate = new Date("Dec 25, 2022 00:00:00").getTime();
