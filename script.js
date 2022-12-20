@@ -38,42 +38,21 @@ const countDown = setInterval(() => {
   const difference = countDownDate - today;
 
   // calcolo il tempo per giorni, ore, minuti e secondi
-
-  //giorni
+  // giorni
   let daysLeft = Math.floor(difference / days);
-
-  if (daysLeft < 10) {
-    daysLeft = "0" + daysLeft;
-  } else {
-    daysLeft;
-  }
+  daysLeft = daysLeft < 10 ? "0" + daysLeft : daysLeft;
 
   // ore
   let hoursLeft = Math.floor((difference % days) / hours);
-
-  if (hoursLeft < 10) {
-    hoursLeft = "0" + hoursLeft;
-  } else {
-    hoursLeft;
-  }
+  hoursLeft = hoursLeft < 10 ? "0" + hoursLeft : hoursLeft;
 
   // minuti
   let minutesLeft = Math.floor((difference % hours) / minutes);
-
-  if (minutesLeft < 10) {
-    minutesLeft = "0" + minutesLeft;
-  } else {
-    minutesLeft;
-  }
+  minutesLeft = minutesLeft < 10 ? "0" + minutesLeft : minutesLeft;
 
   // secondi
   let secondsLeft = Math.floor((difference % minutes) / seconds);
-
-  if (secondsLeft < 10) {
-    secondsLeft = "0" + secondsLeft;
-  } else {
-    secondsLeft;
-  }
+  secondsLeft = secondsLeft < 10 ? "0" + secondsLeft : secondsLeft;
 
   // stampo in pagina
   countDays.innerText = daysLeft;
