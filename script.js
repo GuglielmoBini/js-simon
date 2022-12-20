@@ -33,20 +33,47 @@ const days = hours * 24;
 const countDown = setInterval(() => {
   // prendo la data di oggi
   const today = new Date().getTime();
-  //   console.log(today);
 
   // trovo la differenze tra la data di oggi e quella della fine del mio countdown
   const difference = countDownDate - today;
 
   // calcolo il tempo per giorni, ore, minuti e secondi
-  const daysLeft = Math.floor(difference / days);
-  //   console.log("giorni:" + " " + daysLeft);
-  const hoursLeft = Math.floor((difference % days) / hours);
-  //   console.log("ore:" + " " + hoursLeft);
-  const minutesLeft = Math.floor((difference % hours) / minutes);
-  //   console.log("minuti:" + " " + minutesLeft);
-  const secondsLeft = Math.floor((difference % minutes) / seconds);
-  //   console.log("secondi:" + " " + secondsLeft);
+
+  //giorni
+  let daysLeft = Math.floor(difference / days);
+
+  if (daysLeft < 10) {
+    daysLeft = "0" + daysLeft;
+  } else {
+    daysLeft;
+  }
+
+  // ore
+  let hoursLeft = Math.floor((difference % days) / hours);
+
+  if (hoursLeft < 10) {
+    hoursLeft = "0" + hoursLeft;
+  } else {
+    hoursLeft;
+  }
+
+  // minuti
+  let minutesLeft = Math.floor((difference % hours) / minutes);
+
+  if (minutesLeft < 10) {
+    minutesLeft = "0" + minutesLeft;
+  } else {
+    minutesLeft;
+  }
+
+  // secondi
+  let secondsLeft = Math.floor((difference % minutes) / seconds);
+
+  if (secondsLeft < 10) {
+    secondsLeft = "0" + secondsLeft;
+  } else {
+    secondsLeft;
+  }
 
   // stampo in pagina
   countDays.innerText = daysLeft;
